@@ -9,8 +9,8 @@ import com.hg.jps.R
 class MainActivity : AppCompatActivity() {
 
     private lateinit var chronometer: Chronometer
+    private lateinit var myChronometer: MyChronometer
     private var elapseTime: Long = 0
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         chronometer = findViewById(R.id.chronometer)
+        myChronometer = findViewById(R.id.my_chronometer)
+        lifecycle.addObserver(myChronometer)
     }
 
     override fun onResume() {
