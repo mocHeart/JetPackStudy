@@ -16,29 +16,30 @@
         android:theme="@style/Theme.JetPackStudy"
         tools:targetApi="31">
         <activity
-            android:name=".demo05.Demo05Activity"
+            android:name=".demo06.Demo06Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".demo05.Demo05Activity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".demo04.Demo04Activity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".demo02.Demo02Activity"
-            android:exported="true"></activity>
+            android:exported="true">
+        </activity>
         <activity
             android:name=".demo01.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+        </activity>
 
         <service
             android:name=".demo02.MyLocationService"
