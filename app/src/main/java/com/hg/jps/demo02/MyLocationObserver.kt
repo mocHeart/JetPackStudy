@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
+import android.media.AudioManager
 import android.os.Bundle
 import android.util.Log
 import androidx.core.app.ActivityCompat
@@ -21,6 +22,14 @@ class MyLocationObserver(var context: Context) : LifecycleObserver {
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun startGetLocation() {
         Log.i("LJY>>", "startGetLocation()")
+
+        //--------------------------测试
+        var audioManager: AudioManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        Log.i("LJY>>", "AudioMode: " + audioManager.mode)
+        audioManager.mode = AudioManager.MODE_NORMAL
+        Log.i("LJY>>", "AudioMode: " + audioManager.mode)
+        //--------------------------
+
         locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         myLocationListener = MyLocationListener()
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
