@@ -16,13 +16,17 @@
         android:theme="@style/Theme.JetPackStudy"
         tools:targetApi="31">
         <activity
-            android:name=".demo07.Demo07Activity"
+            android:name=".demo08.Demo08Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".demo07.Demo07Activity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".demo06.Demo06Activity"
