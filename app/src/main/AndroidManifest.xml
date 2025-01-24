@@ -18,7 +18,7 @@
         android:theme="@style/Theme.JetPackStudy"
         tools:targetApi="31">
         <activity
-            android:name=".demo10.Demo10Activity"
+            android:name=".demo11.Demo11Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".demo10.Demo10Activity"
+            android:exported="true" />
         <activity
             android:name=".demo09.Demo09Activity"
             android:exported="true" />
