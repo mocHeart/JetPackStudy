@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +18,7 @@
         android:theme="@style/Theme.JetPackStudy"
         tools:targetApi="31">
         <activity
-            android:name=".demo08.Demo08Activity"
+            android:name=".demo09.Demo09Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,29 +27,26 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".demo08.Demo08Activity"
+            android:exported="true" />
+        <activity
             android:name=".demo07.Demo07Activity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".demo06.Demo06Activity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".demo05.Demo05Activity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".demo04.Demo04Activity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".demo02.Demo02Activity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".demo01.MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
 
         <service
             android:name=".demo02.MyLocationService"
