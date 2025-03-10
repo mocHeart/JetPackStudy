@@ -6,7 +6,7 @@ import android.widget.Chronometer
 import androidx.appcompat.app.AppCompatActivity
 import com.hg.jps.R
 
-class MainActivity : AppCompatActivity() {
+class Demo01Activity : AppCompatActivity() {
 
     private lateinit var chronometer: Chronometer
     private lateinit var myChronometer: MyChronometer
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_demo01)
 
         chronometer = findViewById(R.id.chronometer)
         myChronometer = findViewById(R.id.my_chronometer)

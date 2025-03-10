@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.hg.jps.R
+import com.hg.jps.model.TAG
 
 @SuppressLint("MissingInflatedId")
 class Demo02Activity : AppCompatActivity() {
@@ -17,13 +18,13 @@ class Demo02Activity : AppCompatActivity() {
 
         // 启动Service
         findViewById<Button>(R.id.dm02_btn_start).setOnClickListener {
-            Log.i("JY>>", "dm02_btn_start")
+            Log.i(TAG, "dm02_btn_start")
             startService(Intent(this, MyLocationService::class.java))
         }
 
         // 停止Service
         findViewById<Button>(R.id.dm02_btn_stop).setOnClickListener {
-            Log.i("JY>>", "dm02_btn_stop")
+            Log.i(TAG, "dm02_btn_stop")
             stopService(Intent(this, MyLocationService::class.java))
         }
 

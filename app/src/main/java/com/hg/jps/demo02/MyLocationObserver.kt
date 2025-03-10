@@ -13,6 +13,8 @@ import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+import com.hg.jps.model.TAG
+import com.hjq.toast.Toaster
 
 class MyLocationObserver(var context: Context) : LifecycleObserver {
 
@@ -21,18 +23,11 @@ class MyLocationObserver(var context: Context) : LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun startGetLocation() {
-        Log.i("LJY>>", "startGetLocation()")
-
-        //--------------------------测试
-        var audioManager: AudioManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-        Log.i("LJY>>", "AudioMode: " + audioManager.mode)
-        audioManager.mode = AudioManager.MODE_NORMAL
-        Log.i("LJY>>", "AudioMode: " + audioManager.mode)
-        //--------------------------
-
+        Log.i(TAG, "startGetLocation()")
         locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         myLocationListener = MyLocationListener()
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Log.i(TAG, "定位权限未授予")
             return
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 1.0F, myLocationListener)
@@ -40,13 +35,14 @@ class MyLocationObserver(var context: Context) : LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun stopGetLocation() {
-        Log.i("LJY>>", "stopGetLocation()")
+        Log.i(TAG, "stopGetLocation()")
         locationManager.removeUpdates(myLocationListener)
     }
 
     class MyLocationListener: LocationListener {
         override fun onLocationChanged(location: Location) {
-            Log.i("LJY>>", "Location changed: " + location.toString())
+            Log.i(TAG, "Location changed: " + location.toString())
+            Toaster.show("Location changed: " + location.toString())
         }
 
         override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {

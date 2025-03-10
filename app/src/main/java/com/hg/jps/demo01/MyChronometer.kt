@@ -14,6 +14,7 @@ class MyChronometer(context: Context?, attrs: AttributeSet?) : Chronometer(conte
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun startMeter() {
+        // SystemClock.elapsedRealtime(): 用于获取自设备启动以来经过的时间（以毫秒为单位）
         base = SystemClock.elapsedRealtime() - elapseTime
         start()
     }
